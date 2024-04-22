@@ -1,30 +1,26 @@
 /**
-    Exercise - 3: Print temperatures in Celsius and Fahrenheit
+    Exercise - 4: Print temperatures in Celsius and Fahrenheit
     
     Cassio Cioni Carmo - 04/21/2024
 **/
 
 #include <stdio.h>
 
+#define LOWERLIMIT  -150
+#define UPPERLIMIT  150
+#define STEPSIZE    20
+
 int main() 
 {
     float tempFahr, tempCelsius;
-    int lowerLimit, upperLimit, stepSize;
-
-    lowerLimit = -150;
-    upperLimit = 200;
-    stepSize = 25;
-
-    tempCelsius = lowerLimit;
 
     printf("Celsius\t\tFahrenheit\n");
 
-    while (tempCelsius <= upperLimit)
+    for (tempCelsius = UPPERLIMIT; tempCelsius > LOWERLIMIT; tempCelsius-=STEPSIZE)
     {
         tempFahr = ((9.00/5.00) * tempCelsius) + 32.00;
         printf("%4.2f\t\t%4.2f\n", tempCelsius, tempFahr);
-        tempCelsius += stepSize;
     }
-    
+
     return 0;
 }
